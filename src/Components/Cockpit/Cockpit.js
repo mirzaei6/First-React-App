@@ -1,25 +1,25 @@
 import React from 'react';
 
-import classes from './Cockpit.css';
+import './Cockpit.css';
 
-const Cockpit = ( props ) => {
+const cockpit = ( props ) => {
     const assignedClasses = [];
     let btnClass = '';
     if (props.showPersons) {
-        btnClass = classes.Red;
+        btnClass = 'Red';
     }
 
     if ( props.persons.length <= 2 ) {
-      assignedClasses.push( classes.red ); // classes = ['red']
+      assignedClasses.push( 'red' ); // classes = ['red']
     }
     if ( props.persons.length <= 1 ) {
-      assignedClasses.push( classes.bold ); // classes = ['red', 'bold']
+      assignedClasses.push( 'bold' ); // classes = ['red', 'bold']
     }
 
     return (
-        <div className={classes.Cockpit}>
+        <div className="Cockpit">
             <h1>{props.title}</h1>
-            <p className={assignedClasses.join( ' ' )}>This is really working!</p>
+            <p className={assignedClasses.join( ' ' )}>This is working!</p>
             <button
                 className={btnClass}
                 onClick={props.clicked}>Toggle Persons</button>
@@ -27,4 +27,4 @@ const Cockpit = ( props ) => {
     );
 };
 
-export default Cockpit;
+export default cockpit;
